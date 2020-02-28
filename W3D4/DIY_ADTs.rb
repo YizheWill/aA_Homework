@@ -66,7 +66,3 @@ class Map
         @map.select {|sub| sub[0] != key}
     end
 end
-
-stack = Stack.new([1,2,3,4,5])
-queue = Queue.new([5,4,3,2,1])
-map = Map.new()

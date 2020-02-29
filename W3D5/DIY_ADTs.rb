@@ -3,17 +3,33 @@ class Stack
         @stack = stack
     end
 
+    def inspect
+        "<Stack #{self.object_id}>"
+    end
+
     def push(el)
-        @stack.push(el)
+        stack.push(el)
+        self
     end
 
     def pop
-        @stack.pop
+        stack.pop
     end
 
     def peek
-        @stack[-1]
+        self.empty? ? (return "empty stack") : stack[-1]
     end
+
+    def empty?
+        stack.empty?
+    end
+
+    def show
+        stack.map {|e| e} #protection : prevent 
+    end
+
+    private
+    attr_reader :stack
 end
 
 class Queue
@@ -31,6 +47,10 @@ class Queue
 
     def peek
         @queue[0]
+    end
+
+    def show
+        self
     end
 end
 
@@ -64,5 +84,21 @@ class Map
 
     def delete(key)
         @map.select {|sub| sub[0] != key}
+    end
+end
+
+class Node
+    def initialize(val, parent, *children)
+        @val = val
+        @parent = parent
+        @children = children
+    end
+
+    def root?
+        @parent == nil
+    end
+
+    def leave?
+        @children == nil
     end
 end

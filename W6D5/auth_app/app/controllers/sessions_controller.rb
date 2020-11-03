@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
     else
       render json: "Credentials were wrong"
     end
+    
   end
 
   def new

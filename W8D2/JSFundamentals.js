@@ -81,6 +81,6 @@ const exclusive_range = (startPoint, endPoint) => {
 const isPrime = (number) =>
   number >= 2 && !exclusive_range(2, number).some((el) => number % el === 0);
 
-const somOfPrimes = (counter) => {
+const sumOfPrimes = (counter) => {
   let sum = 0;
 };
